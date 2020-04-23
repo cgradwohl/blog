@@ -1,35 +1,57 @@
+/* eslint-disable */
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import {
+  Flex,
+  Box,
   Text,
+  Heading,
 } from 'rebass';
-
-import { Container, Item } from '../components';
 
 const Index = ({ data }) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Container mx={-2}>
-      <Item>
-        <Text p={1}>
-          ONE
-        </Text>
-      </Item>
-      {
-        posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <Item>
-              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                {title}
-              </Link>
-            </Item>
-          );
-        })
-      }
-    </Container>
+    <Flex height='100%' justifyContent='center' pt={40}>
+      <Flex
+        p={3}
+        height='50%'
+        width={2/5}
+        justifyContent='center'
+        sx={{
+          borderRight: '1px solid #e6e6e6',
+        }}
+      >
+        <Box width='50%'>
+          <Heading>Chris Gradwohl</Heading>
+          <Text color='#888'>AWS Data Hero providing training and consulting with expertise in DynamoDB, serverless applications, and cloud-native technology.</Text>
+        </Box>
+      </Flex>
+      
+      
+      <Flex
+        flexDirection='column'
+        height='100%'
+        width={3/5}
+        p={3}
+      >
+        {
+          posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <Flex
+                flex={1}
+              >
+                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                  {title}
+                </Link>
+              </Flex>
+            );
+          })
+        }
+      </Flex>
+    </Flex>
   );
 };
 
