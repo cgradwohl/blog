@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
 import {
   Flex,
 } from 'rebass';
 
-const Container = props => (
+const Container = (props) => (
   <Flex
     {...props}
     sx={{
       flexDirection: 'column',
-      height:'100%'
+      height: '100%',
     }}
   >
     { props.children }

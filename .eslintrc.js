@@ -9,8 +9,10 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "react/jsx-uses-react": 2,
+    "react/jsx-props-no-spreading": 0,
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "react/jsx-one-expression-per-line": 0,
     "react/prop-types": 0,
+    "react/destructuring-assignment": 0,
   },
 }

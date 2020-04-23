@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import {
   Flex,
 } from 'rebass';
 
-const Item = props => (
+const Item = (props) => (
   <Flex
     {...props}
     sx={{

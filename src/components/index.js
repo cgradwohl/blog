@@ -3,5 +3,5 @@ import Item from './item';
 
 export {
   Container,
-  Item
-}
+  Item,
+};
