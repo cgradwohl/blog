@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import {
   Text,
@@ -17,19 +17,18 @@ const Index = ({ data }) => {
           ONE
         </Text>
       </Item>
-      <Item>
-        <Text p={1}>
-          TWO ... test me bro
-          {
-            posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug;
-              return (
-                <Text>{title}</Text>
-              );
-            })
-          }
-        </Text>
-      </Item>
+      {
+        posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug;
+          return (
+            <Item>
+              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                {title}
+              </Link>
+            </Item>
+          );
+        })
+      }
     </Container>
   );
 };
