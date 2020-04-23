@@ -15,4 +15,11 @@ export default {
     heading: 700,
     bold: 700,
   },
+  styles: {
+    root: {
+      // uses the theme values provided above
+      fontFamily: 'body',
+      fontWeight: 'bold',
+    },
+  },
 };
